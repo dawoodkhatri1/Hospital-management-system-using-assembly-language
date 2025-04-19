@@ -5,6 +5,8 @@
 
 A simple yet functional Hospital Management System implemented in MIPS Assembly language, designed to run in the MARS simulator. This program demonstrates core assembly programming concepts while providing practical patient management functionality.
 
+---
+
 ## Features
 
 - **Patient Record Management**:
@@ -24,146 +26,122 @@ A simple yet functional Hospital Management System implemented in MIPS Assembly 
   - Clear input prompts
   - Formatted output display
 
+---
+
 ## Prerequisites
 
 - [MARS MIPS Simulator](http://courses.missouristate.edu/KenVollmar/MARS/) (v4.5 or later)
 - Basic understanding of MIPS assembly language
 
+---
+
 ## Installation & Usage
 
 1. **Download the Assembly File**:
+
    ```bash
-   git clone https://github.com/yourusername/hospital-management-mips.git
-   cd hospital-management-mips
+   git clone https://github.com/dawoodkhatri1/Hospital-management-system-using-assembly-language.git
+   cd Hospital-management-system-using-assembly-language
+   ```
 
+2. **Run in MARS**:
 
-2 Run in MARS:
+   - Launch MARS simulator
+   - Open `hospital.asm` (File → Open)
+   - Assemble (F3)
+   - Run (F5)
 
-  Launch MARS simulator
+3. **Usage in the System**:
 
-  Open hospital.asm (File → Open)
+   - Hospital Management System
+   - 1. Add Patient
+   - 2. View All Patients
+   - 3. Search Patient
+   - 4. Exit
 
-  Assemble (F3)
+   Choose option:
 
-  Run (F5)
+---
 
+## Code Structure
 
-3 Usage the System
+**DATA SEGMENT**  
+  - `patients`: Array for patient records (10 max)  
+  - `patient_count`: Current patient count  
+  - `menu_strings`: All interface text prompts  
+  - `temp_buffers`: Input buffers
 
-Hospital Management System
-
-1. Add Patient
-2. View All Patients
-3. Search Patient
-4. Exit
-Choose option:
-
-
-
-4 Code Structure
-
-DATA SEGMENT
-  patients       - Array for patient records (10 max)
-  patient_count  - Current patient count
-  menu_strings   - All interface text prompts
-  temp_buffers   - Input buffers
-
-TEXT SEGMENT
-  main           - Program entry point, menu loop
-  add_patient    - Patient creation logic
-  view_patients  - Display all records
-  search_patient - Find patient by ID
-  exit_program   - Clean termination
+**TEXT SEGMENT**  
+  - `main`: Program entry point, menu loop  
+  - `add_patient`: Patient creation logic  
+  - `view_patients`: Display all records  
+  - `search_patient`: Find patient by ID  
+  - `exit_program`: Clean termination
   
-HELPER FUNCTIONS
-  remove_newline - String processing
-  copy_string    - Memory operations
-  compare_strings- Search functionality
+**HELPER FUNCTIONS**  
+  - `remove_newline`: String processing  
+  - `copy_string`: Memory operations  
+  - `compare_strings`: Search functionality
 
+---
 
-
-5 Usage
-
+## Example Usage
 
 Hospital Management System
 
-1. Add Patient
-
-2. View All Patients
-
-3. Search Patient
-
+1. Add Patient  
+2. View All Patients  
+3. Search Patient  
 4. Exit
 
 Choose option: 1
 
-Enter Patient ID: P1001
-
-Enter Patient Name: John Doe
-
-Enter Patient Age: 35
-
-Enter Patient Gender (M/F): M
-
-Enter Diagnosis: Influenza
+```
+Enter Patient ID: P1001  
+Enter Patient Name: John Doe  
+Enter Patient Age: 35  
+Enter Patient Gender (M/F): M  
+Enter Diagnosis: Influenza  
 
 Patient added successfully!
+```
 
-##
+---
 
+## Technical Details
 
+**Memory Layout**: Each patient record occupies 40 bytes:
 
-6  Technical Details
+  - ID: 8 bytes  
+  - Name: 20 bytes  
+  - Age: 4 bytes (word)  
+  - Gender: 1 byte  
+  - Diagnosis: 7 bytes
 
-Memory Layout: Each patient record occupies 40 bytes:
+**Limitations**:  
+  - Volatile storage (data lost on exit)  
+  - Maximum 10 patients  
+  - No persistent storage
 
-  ID: 8 bytes
+---
 
-  Name: 20 bytes
+## Future Enhancements
 
-  Age: 4 bytes (word)
+- Add file I/O for data persistence
+- Implement patient record editing
+- Add appointment scheduling
+- Expand to 100+ patient capacity
 
-  Gender: 1 byte
+---
 
-  Diagnosis: 7 bytes
-
-
-Limitations:
-
-  Volatile storage (data lost on exit)
-
-  Maximum 10 patients
-
-  No persistent storage
-
-##
-
-7  Future Enhancement
-
-  Add file I/O for data persistence
-
-  Implement patient record editing
-
-  Add appointment scheduling
-
-  Expand to 100+ patient capacity
-
-
-
-8 Contributing
+## Contributing
 
 Contributions welcome! Please fork the repository and submit pull requests for:
 
-  Bug fixes
+  - Bug fixes  
+  - New features  
+  - Documentation improvements
 
-  New features
-
-  Documentation improvements
-
-
-
-9 License
-
-MIT License - Free for educational and personal use
+---
 
 Note: This project was developed for educational purposes to demonstrate MIPS assembly programming concepts in a practical application context.
