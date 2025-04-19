@@ -54,10 +54,10 @@ A simple yet functional Hospital Management System implemented in MIPS Assembly 
 3. **Usage in the System**:
 
    - Hospital Management System
-   - 1. Add Patient
-   - 2. View All Patients
-   - 3. Search Patient
-   - 4. Exit
+     1. Add Patient
+     2. View All Patients
+     3. Search Patient
+     4. Exit
 
    Choose option:
 
